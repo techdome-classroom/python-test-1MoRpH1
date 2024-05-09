@@ -20,15 +20,3 @@ class Solution:
                     self.explore_island(grid, i, j, visited)
                     island_count += 1
         return island_count
-
-# Example usage
-input_grid = [
-    ["L", "L", "W", "W", "W"],
-    ["L", "L", "W", "W", "W"],
-    ["W", "W", "L", "W", "W"],
-    ["W", "W", "W", "L", "L"],
-]
-
-solution = Solution()
-output = solution.getTotalIsles(input_grid)
-print("Number of distinct islands:", output)
