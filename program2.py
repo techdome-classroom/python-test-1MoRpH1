@@ -1,5 +1,5 @@
 def decode_message(message: str, decoder_key: str) -> bool:
-    if len(message) != len(decoder_key):  
+    if len(message) != len(decoder_key):  # Check if lengths are equal
         return False
     
     for i in range(len(message)):  # Iterate through each character
