@@ -5,11 +5,9 @@ def decode_message(message: str, decoder_key: str) -> bool:
     
     # Iterate through each character in the message and decoder key
     for i in range(len(message)):
-        # If the current character in the decoder key is not a wildcard
-        if decoder_key[i] != '*' and decoder_key[i] != '?':
-            # Check if the characters don't match
-            if decoder_key[i] != message[i]:
-                return False
+        # If the current character in the decoder key is not a wildcard or the characters don't match
+        if decoder_key[i] != '*' and decoder_key[i] != '?' and decoder_key[i] != message[i]:
+            return False
     
     # If all characters match or are wildcard symbols, return True
     return True
