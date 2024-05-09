@@ -10,4 +10,4 @@ def decode_message(message: str, decoder_key: str) -> bool:
         elif decoder_key[i] != message[i]:  
             return False  
     
-    return True  
+    return True 
