@@ -1,14 +1,21 @@
-def decode_message(s: str, p: str) -> bool:
-    if len(s) != len(p):  # Check if the lengths of the message and decoder key are the same
+def decode_message(message: str, decoder_key: str) -> bool:
+    # Check if the length of the message and decoder key are the same
+    if len(message) != len(decoder_key):
         return False
     
-    for i in range(len(s)):  # Iterate through each character in the message and decoder key
-        if p[i] != '*' and p[i] != '?' and p[i] != s[i]:  # Check if the characters don't match
-            return False
+    # Iterate through each character in the message and decoder key
+    for i in range(len(message)):
+        # If the current character in the decoder key is not a wildcard
+        if decoder_key[i] != '*' and decoder_key[i] != '?':
+            # Check if the characters don't match
+            if decoder_key[i] != message[i]:
+                return False
     
-    return True  # If all characters match or are wildcard symbols, return True
+    # If all characters match or are wildcard symbols, return True
+    return True
 
 # Test cases
 print(decode_message("aa", "a"))  # Output: False
 print(decode_message("aa", "*"))  # Output: True
-print(decode_message("cb", "?a"))  # Output: False
+print(decode_mess
+  # Output: False
