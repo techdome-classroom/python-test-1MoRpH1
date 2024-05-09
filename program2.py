@@ -17,5 +17,5 @@ def decode_message(message: str, decoder_key: str) -> bool:
 # Test cases
 print(decode_message("aa", "a"))  # Output: False
 print(decode_message("aa", "*"))  # Output: True
-print(decode_mess
-  # Output: False
+print(decode_message("cb", "?a"))  # Output: False
+print(decode_message("abc", "?b?"))  # Output: True
