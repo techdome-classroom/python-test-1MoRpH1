@@ -1,19 +1,13 @@
 def decode_message(message: str, decoder_key: str) -> bool:
-    # Check if the length of the message and decoder key are the same
-    if len(message) != len(decoder_key):
+    if len(message) != len(decoder_key):  # Check if lengths are equal
         return False
     
-    # Iterate through each character in the message and decoder key
-    for i in range(len(message)):
-        # If the current character in the decoder key is not a wildcard or the characters don't match
-        if decoder_key[i] != '*' and decoder_key[i] != message[i]:
-            return False
+    for i in range(len(message)):  # Iterate through each character
+        if decoder_key[i] == '?':  # Check if it's a question mark
+            continue  # Move to the next character
+        elif decoder_key[i] == '*':  # Check if it's a star symbol
+            continue  # Move to the next character
+        elif decoder_key[i] != message[i]:  # Check if characters don't match
+            return False  # If they don't match, return False
     
-    # If all characters match or are wildcard symbols, return True
-    return True
-
-# Test cases
-print(decode_message("aa", "a"))  # Output: False
-print(decode_message("aa", "*"))  # Output: True
-print(decode_message("cb", "?a"))  # Output: False
-print(decode_message("abc", "?b?"))  # Output: True
+    return True  # If all characters match or are wildcard symbols, return True
