@@ -17,6 +17,6 @@ class Solution:
         for i in range(rows):
             for j in range(cols):
                 if grid[i][j] == 'L' and not visited[i][j]:
-                    self.explore_island(grid, i, j, visited)
+                    self.scan_island(grid, i, j, visited)
                     island_count += 1
         return island_count
